@@ -1,0 +1,464 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nexus Protocol - Sci-Fi RPG Community</title>
+    <meta name="description" content="Join the ultimate Discord community for Nexus Protocol, a high-tech sci-fi open-world RPG with advanced parkour, crafting, and epic boss battles.">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Rajdhani:wght@300;400;500;600;700&family=Exo:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Styles -->
+    <link rel="stylesheet" href="styles.css">
+    
+    <!-- Three.js for 3D animations -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    
+    <!-- GSAP for animations -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/MotionPathPlugin.min.js"></script>
+</head>
+<body>
+    <!-- Terminal Intro Overlay -->
+    <div id="terminal-intro" class="terminal-intro">
+        <div class="terminal-container">
+            <div class="terminal-header">
+                <div class="terminal-title">NEXUS PROTOCOL - SECURE TERMINAL</div>
+                <div class="terminal-controls">
+                    <span class="control-btn minimize"></span>
+                    <span class="control-btn maximize"></span>
+                    <span class="control-btn close"></span>
+                </div>
+            </div>
+            <div class="terminal-body">
+                <div class="terminal-content">
+                    <div class="terminal-line">
+                        <span class="prompt">></span>
+                        <span class="command" data-text="Initializing system..."></span>
+                        <span class="cursor">_</span>
+                    </div>
+                    <div class="terminal-line">
+                        <span class="prompt">></span>
+                        <span class="command" data-text="Verifying credentials..."></span>
+                        <span class="cursor">_</span>
+                    </div>
+                    <div class="terminal-line">
+                        <span class="prompt">></span>
+                        <span class="command" data-text="Access granted."></span>
+                        <span class="cursor">_</span>
+                    </div>
+                    <div class="terminal-line">
+                        <span class="prompt">></span>
+                        <span class="command" data-text="Building interface..."></span>
+                        <span class="cursor">_</span>
+                    </div>
+                    <div class="terminal-line">
+                        <span class="prompt">></span>
+                        <span class="command" data-text="Loading header..."></span>
+                        <span class="cursor">_</span>
+                    </div>
+                    <div class="terminal-line">
+                        <span class="prompt">></span>
+                        <span class="command" data-text="Constructing navigation bar..."></span>
+                        <span class="cursor">_</span>
+                    </div>
+                    <div class="terminal-line">
+                        <span class="prompt">></span>
+                        <span class="command" data-text="Injecting Discord link..."></span>
+                        <span class="cursor">_</span>
+                    </div>
+                    <div class="terminal-line">
+                        <span class="prompt">></span>
+                        <span class="command" data-text="Spawning media gallery..."></span>
+                        <span class="cursor">_</span>
+                    </div>
+                    <div class="terminal-line">
+                        <span class="prompt">></span>
+                        <span class="command" data-text="System ready."></span>
+                        <span class="cursor">_</span>
+                    </div>
+                </div>
+            </div>
+            <div class="terminal-footer">
+                <div class="skip-intro">
+                    <button id="skip-intro-btn" class="skip-btn">Skip Intro</button>
+                </div>
+                <div class="terminal-status">
+                    <span class="status-indicator"></span>
+                    <span class="status-text">Connecting...</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <span class="logo-text">NEXUS</span>
+                <span class="logo-accent">PROTOCOL</span>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="#home" class="nav-link">Home</a></li>
+                <li><a href="#about" class="nav-link">About</a></li>
+                <li><a href="#worlds" class="nav-link">Worlds</a></li>
+                <li><a href="#community" class="nav-link">Community</a></li>
+                <li><a href="#gallery" class="nav-link">Gallery</a></li>
+                <li><a href="#faq" class="nav-link">FAQ</a></li>
+            </ul>
+            <div class="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Landing Section -->
+    <section id="home" class="landing">
+        <div id="particles-container"></div>
+        <div id="holographic-grid"></div>
+        <div id="floating-elements"></div>
+        <div class="landing-content">
+            <div class="game-title">
+                <div class="title-3d-container">
+                    <h1 class="title-main">NEXUS</h1>
+                    <div class="title-ring"></div>
+                </div>
+                <h2 class="title-sub">PROTOCOL</h2>
+                <p class="title-tagline">Enter the Future of Open-World RPG</p>
+            </div>
+            <div class="cta-section">
+                <a href="https://discord.gg/sz9eVcQTNx" class="cta-button" target="_blank">
+                    <span class="cta-text">Join Our Discord Community</span>
+                    <div class="cta-glow"></div>
+                    <div class="cta-hologram"></div>
+                </a>
+            </div>
+        </div>
+        <div class="scroll-indicator">
+            <div class="scroll-arrow"></div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="container">
+            <h2 class="section-title">About the Game</h2>
+            <div class="features-grid">
+                <div class="feature-card holographic-panel" data-feature="parkour">
+                    <div class="feature-icon">
+                        <div class="icon-parkour floating-icon"></div>
+                    </div>
+                    <h3>Advanced Parkour</h3>
+                    <p>Fluid movement system with gravity-defying mechanics and seamless traversal across urban landscapes.</p>
+                    <div class="panel-glow"></div>
+                </div>
+                <div class="feature-card holographic-panel" data-feature="combat">
+                    <div class="feature-icon">
+                        <div class="icon-combat floating-icon"></div>
+                    </div>
+                    <h3>Dynamic Combat</h3>
+                    <p>Fast-paced, skill-based combat with weapon crafting and tactical positioning systems.</p>
+                    <div class="panel-glow"></div>
+                </div>
+                <div class="feature-card holographic-panel" data-feature="crafting">
+                    <div class="feature-icon">
+                        <div class="icon-crafting floating-icon"></div>
+                    </div>
+                    <h3>Crafting & Building</h3>
+                    <p>Create custom weapons, build bases, and scavenge resources in a persistent world.</p>
+                    <div class="panel-glow"></div>
+                </div>
+                <div class="feature-card holographic-panel" data-feature="exploration">
+                    <div class="feature-icon">
+                        <div class="icon-exploration floating-icon"></div>
+                    </div>
+                    <h3>World Exploration</h3>
+                    <p>Discover ancient civilizations, dive into underwater ruins, and uncover hidden secrets.</p>
+                    <div class="panel-glow"></div>
+                </div>
+                <div class="feature-card holographic-panel" data-feature="hacking">
+                    <div class="feature-icon">
+                        <div class="icon-hacking floating-icon"></div>
+                    </div>
+                    <h3>Hack & Program</h3>
+                    <p>Program AI bots for assistance and hack into systems to gain tactical advantages.</p>
+                    <div class="panel-glow"></div>
+                </div>
+                <div class="feature-card holographic-panel" data-feature="bosses">
+                    <div class="feature-icon">
+                        <div class="icon-bosses floating-icon"></div>
+                    </div>
+                    <h3>Epic Boss Battles</h3>
+                    <p>Face massive world bosses with Elden Ring-level difficulty and adjustable challenge modes.</p>
+                    <div class="panel-glow"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Worlds & Lore Section -->
+    <section id="worlds" class="worlds">
+        <div class="container">
+            <h2 class="section-title">Worlds & Lore</h2>
+            <div class="worlds-container">
+                <div class="world-timeline">
+                    <div class="timeline-item" data-world="nexus">
+                        <div class="timeline-marker"></div>
+                        <div class="timeline-content">
+                            <h3>The Nexus</h3>
+                            <p>The central hub where all worlds converge. A technological marvel that serves as the gateway between dimensions.</p>
+                            <div class="lore-expand">
+                                <button class="expand-btn">Read More</button>
+                                <div class="lore-details">
+                                    <p>The Nexus was created by an ancient civilization known as the Architects. This massive structure harnesses quantum energy to maintain stability across multiple dimensions. Players begin their journey here, learning the basics of the world's technology and lore.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="timeline-item" data-world="cybercity">
+                        <div class="timeline-marker"></div>
+                        <div class="timeline-content">
+                            <h3>Cyber City Alpha</h3>
+                            <p>A sprawling metropolis where technology and humanity collide. Neon-lit streets hide dangerous secrets.</p>
+                            <div class="lore-expand">
+                                <button class="expand-btn">Read More</button>
+                                <div class="lore-details">
+                                    <p>Once a beacon of progress, Cyber City Alpha fell into chaos when the AI governing systems went rogue. Now, players must navigate through its towering skyscrapers, avoiding security drones and uncovering the truth behind the city's downfall.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="timeline-item" data-world="abyss">
+                        <div class="timeline-marker"></div>
+                        <div class="timeline-content">
+                            <h3>The Abyssal Depths</h3>
+                            <p>An underwater realm filled with ancient ruins and mysterious creatures from the deep.</p>
+                            <div class="lore-expand">
+                                <button class="expand-btn">Read More</button>
+                                <div class="lore-details">
+                                    <p>Beneath the waves lies the remains of the first civilization. The Abyssal Depths hold the key to understanding the origins of the Nexus Protocol. Players must master underwater exploration and face the Leviathan, a massive sea creature that guards the deepest secrets.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="timeline-item" data-world="void">
+                        <div class="timeline-marker"></div>
+                        <div class="timeline-content">
+                            <h3>The Void Realm</h3>
+                            <p>A dimension of pure energy where the laws of physics bend and reality itself is questioned.</p>
+                            <div class="lore-expand">
+                                <button class="expand-btn">Read More</button>
+                                <div class="lore-details">
+                                    <p>The final frontier, where only the most skilled players dare to venture. The Void Realm is home to the Architect's final creation - a being of pure energy that tests the limits of what's possible. Defeating this entity unlocks the true ending of the Nexus Protocol.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Community Hub Section -->
+    <section id="community" class="community">
+        <div class="container">
+            <h2 class="section-title">Community Hub</h2>
+            <div class="community-container">
+                <div class="discord-widget">
+                    <h3>Join Our Community</h3>
+                    <p>Connect with fellow players, share strategies, and participate in exclusive events.</p>
+                    <a href="https://discord.gg/sz9eVcQTNx" class="discord-button" target="_blank">
+                        <span class="discord-icon"></span>
+                        Join Discord Server
+                    </a>
+                    <div class="community-features">
+                        <div class="feature-item">
+                            <span class="feature-icon">🎮</span>
+                            <span>Game Discussions</span>
+                        </div>
+                        <div class="feature-item">
+                            <span class="feature-icon">🏆</span>
+                            <span>Tournaments</span>
+                        </div>
+                        <div class="feature-item">
+                            <span class="feature-icon">🤝</span>
+                            <span>Team Building</span>
+                        </div>
+                        <div class="feature-item">
+                            <span class="feature-icon">📢</span>
+                            <span>Latest Updates</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Media Gallery Section -->
+    <section id="gallery" class="gallery">
+        <div class="container">
+            <h2 class="section-title">Media Gallery</h2>
+            <div class="gallery-container">
+                <div class="gallery-carousel">
+                    <div class="carousel-track">
+                        <div class="gallery-item active" data-media="gameplay1">
+                            <div class="gallery-image">
+                                <div class="placeholder-image gameplay1"></div>
+                            </div>
+                            <div class="gallery-overlay">
+                                <h3>Advanced Parkour System</h3>
+                                <p>Experience fluid movement across futuristic landscapes</p>
+                            </div>
+                        </div>
+                        <div class="gallery-item" data-media="combat1">
+                            <div class="gallery-image">
+                                <div class="placeholder-image combat1"></div>
+                            </div>
+                            <div class="gallery-overlay">
+                                <h3>Dynamic Combat</h3>
+                                <p>Engage in fast-paced, skill-based battles</p>
+                            </div>
+                        </div>
+                        <div class="gallery-item" data-media="world1">
+                            <div class="gallery-image">
+                                <div class="placeholder-image world1"></div>
+                            </div>
+                            <div class="gallery-overlay">
+                                <h3>Cyber City Alpha</h3>
+                                <p>Explore the neon-lit streets of the future</p>
+                            </div>
+                        </div>
+                        <div class="gallery-item" data-media="boss1">
+                            <div class="gallery-image">
+                                <div class="placeholder-image boss1"></div>
+                            </div>
+                            <div class="gallery-overlay">
+                                <h3>Epic Boss Battles</h3>
+                                <p>Face massive creatures in intense encounters</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="carousel-controls">
+                        <button class="carousel-btn prev">‹</button>
+                        <button class="carousel-btn next">›</button>
+                    </div>
+                </div>
+                <div class="gallery-thumbnails">
+                    <div class="thumbnail active" data-target="0"></div>
+                    <div class="thumbnail" data-target="1"></div>
+                    <div class="thumbnail" data-target="2"></div>
+                    <div class="thumbnail" data-target="3"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section id="faq" class="faq">
+        <div class="container">
+            <h2 class="section-title">FAQ & Rules</h2>
+            <div class="faq-container">
+                <div class="terminal-window">
+                    <div class="terminal-header">
+                        <div class="terminal-buttons">
+                            <span class="btn close"></span>
+                            <span class="btn minimize"></span>
+                            <span class="btn maximize"></span>
+                        </div>
+                        <div class="terminal-title">nexus_protocol_community.exe</div>
+                    </div>
+                    <div class="terminal-content">
+                        <div class="faq-section">
+                            <h3 class="faq-category">Server Rules</h3>
+                            <div class="faq-item">
+                                <button class="faq-question">
+                                    <span>What are the community guidelines?</span>
+                                    <span class="faq-icon">+</span>
+                                </button>
+                                <div class="faq-answer">
+                                    <p>• Respect all members and maintain a positive atmosphere<br>
+                                    • No spam, harassment, or inappropriate content<br>
+                                    • Keep discussions relevant to the game and community<br>
+                                    • Follow Discord's Terms of Service</p>
+                                </div>
+                            </div>
+                            <div class="faq-item">
+                                <button class="faq-question">
+                                    <span>How do I report issues or players?</span>
+                                    <span class="faq-icon">+</span>
+                                </button>
+                                <div class="faq-answer">
+                                    <p>Use the #report-issues channel or contact a moderator directly. Provide screenshots and detailed information about the incident.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="faq-section">
+                            <h3 class="faq-category">Gameplay Tips</h3>
+                            <div class="faq-item">
+                                <button class="faq-question">
+                                    <span>What's the best way to start in Nexus Protocol?</span>
+                                    <span class="faq-icon">+</span>
+                                </button>
+                                <div class="faq-answer">
+                                    <p>Begin in The Nexus hub to learn basic mechanics. Focus on mastering parkour movement and basic crafting before venturing into more dangerous areas.</p>
+                                </div>
+                            </div>
+                            <div class="faq-item">
+                                <button class="faq-question">
+                                    <span>How do I adjust the difficulty?</span>
+                                    <span class="faq-icon">+</span>
+                                </button>
+                                <div class="faq-answer">
+                                    <p>Access the settings menu and navigate to "Gameplay Options". You can adjust enemy health, damage, and AI behavior to match your skill level.</p>
+                                </div>
+                            </div>
+                            <div class="faq-item">
+                                <button class="faq-question">
+                                    <span>What's the best strategy for boss battles?</span>
+                                    <span class="faq-icon">+</span>
+                                </button>
+                                <div class="faq-answer">
+                                    <p>Study attack patterns, use the environment to your advantage, and don't be afraid to retreat and regroup. Co-op play can make these encounters more manageable.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <span class="logo-text">NEXUS</span>
+                    <span class="logo-accent">PROTOCOL</span>
+                </div>
+                <div class="footer-links">
+                    <a href="https://discord.gg/sz9eVcQTNx" target="_blank">Discord Community</a>
+                    <a href="#about">About</a>
+                    <a href="#worlds">Worlds</a>
+                    <a href="#gallery">Gallery</a>
+                </div>
+                <div class="footer-social">
+                    <p>Join the future of gaming</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Nexus Protocol Community. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="script.js"></script>
+</body>
+</html>
